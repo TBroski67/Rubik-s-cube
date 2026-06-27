@@ -1,31 +1,24 @@
 # Rubik-s-cube
-class stckr:
+class facelet:
     def __init__(self, color):
         self.color=color
-#make objects of sticker class to update piece color more efficiently
-#top of cube starts out as yellow
-u1=stckr('y')
-u2=stckr('y')
-u3=stckr('y')
-u4=stckr('y')
-u5=stckr('y')
-u6=stckr('y')
-u7=stckr('y')
-u8=stckr('y')
-u9=stckr('y')
-#front of cube is blue
-f1=stckr('b')
-f2=stckr('b')
-f3=stckr('b')
-f4=stckr('b')
-f5=stckr('b')
-f6=stckr('b')
-f7=stckr('b')
-f8=stckr('b')
-f9=stckr('b')
+#make objects of facelet class to update piece color more efficiently
+#top of cube starts out as yellow (u for up)
+u1, u2, u3, u4, u5, u6, u7, u8, u9=facelet('y')
+#front of cube is blue (f for front)
+f1, f2, f3, f4, f5, f6, f7, f8, f9=facelet('b')
+#right side is red (r for right)
+r1, r2, r3, r4, r5, r6, r7, r8, r9=facelet('r')
+#back is green (b for back)
+b1, b2, b3, b4, b5, b6, b7, b8, b9=facelet('g')
+#left is orange (l for left)
+l1, l2, l3, l4, l5, l6, l7, l8, l9=facelet('o')
+#bottom is white (d for down)
+d1, d2, d3, d4, d5, d6, d7, d8, d9=facelet('w')
 #all the faces of the cube and the pieces that will be affected by rotations
-u_face=[['y','y','y'],['y','y','y'],['y','y','y']]
-u_rotation1=['y','y','y','y','y','y','y','y']
+#pieces affected by rotations listed in clockwise order
+u_face=[[u1, u2, u3],[u4, u5, u6],[u7, u8, u9]]
+u_rotation1=[u1, u2, u3, u6, u9, u8, u7, u4]
 u_rotation2=[['o','o','o'],['g','g','g'],['r','r','r'],['b','b','b']]
 l_face=[['o','o','o'],['o','o','o'],['o','o','o']]
 l_rotation1=['o','o','o','o','o','o','o','o']
@@ -46,6 +39,15 @@ m_rotation=[['b','b','b'],['y','y','y'],['g','g','g'],['w','w','w']]
 e_rotation=[['o','o','o'],['g','g','g'],['r','r','r'],['b','b','b']]
 s_rotation=[['w','w','w'],['o','o','o'],['y','y','y'],['r','r','r']]
 side_list=[u_face, l_face, f_face, r_face, b_face, d_face]
+
+#displays the cube in an unfolded state
+def print_cube():
+    print(f"""
+      {u1.color} {u2.color} {u3.color}
+      {u4.color} {u5.color} {u6.color}
+      {u7.color} {u8.color} {u9.color}
+""")
+
 #function to perform rotations on cube
 def rotate(face, direction):
     if face=='u':
@@ -73,28 +75,28 @@ def rotate(face, direction):
     elif face=='s':
         turn2=s_rotation
     if face not in ['m','e','s']:
-        #use basic steps to simulate rotating cube by switching position of pieces
+        #use basic steps to simulate rotating cube by switching colors of pieces
         if direction==1:
             #clockwise rotation
-            temp_a=turn1[0]
-            temp_b=turn1[1]
-            turn1[0]=turn1[2]
-            turn1[1]=turn1[3]
-            turn1[2]=turn1[4]
-            turn1[3]=turn1[5]
-            turn1[4]=turn1[6]
-            turn1[5]=turn1[7]
-            turn1[6]=temp_a
-            turn1[7]=temp_b
+            temp_a=turn1[0].color
+            temp_b=turn1[1].color
+            turn1[0].color=turn1[2].color
+            turn1[1].color=turn1[3].color
+            turn1[2].color=turn1[4].color
+            turn1[3].color=turn1[5].color
+            turn1[4].color=turn1[6].color
+            turn1[5].color=turn1[7].color
+            turn1[6].color=temp_a
+            turn1[7].color=temp_b
         else:
             #counterclockwise
-            temp_a=turn1[0]
-            temp_b=turn1[1]
-            turn1[0]=turn1[6]
-            turn1[1]=turn1[7]
-            turn1[7]=turn1[5]
-            turn1[6]=turn1[4]
-            turn1[5]=turn1[3]
-            turn1[4]=turn1[2]
-            turn1[3]=temp_b
-            turn1[2]=temp_a
+            temp_a=turn1[0].color
+            temp_b=turn1[1].color
+            turn1[0].color=turn1[6].color
+            turn1[1].color=turn1[7].color
+            turn1[7].color=turn1[5].color
+            turn1[6].color=turn1[4].color
+            turn1[5].color=turn1[3].color
+            turn1[4].color=turn1[2].color
+            turn1[3].color=temp_b
+            turn1[2].color=temp_a
