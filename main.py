@@ -38,7 +38,6 @@ d_rotation2=[['o','o','o'],['b','b','b'],['r','r','r'],['g','g','g']]
 m_rotation=[['b','b','b'],['y','y','y'],['g','g','g'],['w','w','w']]
 e_rotation=[['o','o','o'],['g','g','g'],['r','r','r'],['b','b','b']]
 s_rotation=[['w','w','w'],['o','o','o'],['y','y','y'],['r','r','r']]
-side_list=[u_face, l_face, f_face, r_face, b_face, d_face]
 
 #displays the cube in an unfolded state
 def print_cube():
