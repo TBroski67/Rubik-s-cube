@@ -4,11 +4,35 @@ class facelet:
         self.color=color
 #make objects of facelet class to update piece color more efficiently
 #top of cube starts out as yellow (u for up)
-u1, u2, u3, u4, u5, u6, u7, u8, u9=facelet('y')
+u1=facelet('y')
+u2=facelet('y')
+u3=facelet('y')
+u4=facelet('y')
+u5=facelet('y')
+u6=facelet('y')
+u7=facelet('y')
+u8=facelet('y')
+u9=facelet('y')
 #front of cube is blue (f for front)
-f1, f2, f3, f4, f5, f6, f7, f8, f9=facelet('b')
+f1=facelet('b')
+f2=facelet('b')
+f3=facelet('b')
+f4=facelet('b')
+f5=facelet('b')
+f6=facelet('b')
+f7=facelet('b')
+f8=facelet('b')
+f9=facelet('b')
 #right side is red (r for right)
-r1, r2, r3, r4, r5, r6, r7, r8, r9=facelet('r')
+r1=facelet('r')
+r2=facelet('r')
+r3=facelet('r')
+r4=facelet('r')
+r5=facelet('r')
+r6=facelet('r')
+r7=facelet('r')
+r8=facelet('r')
+r9=facelet('r')
 #back is green (b for back)
 b1, b2, b3, b4, b5, b6, b7, b8, b9=facelet('g')
 #left is orange (l for left)
@@ -46,7 +70,12 @@ def print_cube():
       {u1.color} {u2.color} {u3.color}
       {u4.color} {u5.color} {u6.color}
       {u7.color} {u8.color} {u9.color}
-""")
+{l1.color} {l2.color} {l3.color} {f1.color} {f2.color} {f3.color} {r1.color} {r2.color} {r3.color} {b1.color} {b2.color} {b3.color}
+{l4.color} {l5.color} {l6.color} {f4.color} {f5.color} {f6.color} {r4.color} {r5.color} {r6.color} {b4.color} {b5.color} {b6.color}
+{l7.color} {l8.color} {l9.color} {f7.color} {f8.color} {f9.color} {r7.color} {r8.color} {r9.color} {b7.color} {b8.color} {b9.color}
+      {d1.color} {d2.color} {d3.color}
+      {d4.color} {d5.color} {d6.color}
+      {d7.color} {d8.color} {d9.color}""")
 
 #function to perform rotations on cube
 def rotate(face, direction):
@@ -100,3 +129,4 @@ def rotate(face, direction):
             turn1[4].color=turn1[2].color
             turn1[3].color=temp_b
             turn1[2].color=temp_a
+print_cube()
