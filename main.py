@@ -44,16 +44,32 @@ b7=facelet('g')
 b8=facelet('g')
 b9=facelet('g')
 #left is orange (l for left)
-l1, l2, l3, l4, l5, l6, l7, l8, l9=facelet('o')
+l1=facelet('o')
+l2=facelet('o')
+l3=facelet('o')
+l4=facelet('o')
+l5=facelet('o')
+l6=facelet('o')
+l7=facelet('o')
+l8=facelet('o')
+l9=facelet('o')
 #bottom is white (d for down)
-d1, d2, d3, d4, d5, d6, d7, d8, d9=facelet('w')
+d1=facelet('w')
+d2=facelet('w')
+d3=facelet('w')
+d4=facelet('w')
+d5=facelet('w')
+d6=facelet('w')
+d7=facelet('w')
+d8=facelet('w')
+d9=facelet('w')
 #all the faces of the cube and the pieces that will be affected by rotations
 #pieces affected by rotations listed in clockwise order
 u_face=[[u1, u2, u3],[u4, u5, u6],[u7, u8, u9]]
 u_rotation1=[u1, u2, u3, u6, u9, u8, u7, u4]
-u_rotation2=[['o','o','o'],['g','g','g'],['r','r','r'],['b','b','b']]
-l_face=[['o','o','o'],['o','o','o'],['o','o','o']]
-l_rotation1=['o','o','o','o','o','o','o','o']
+u_rotation2=[[l1, l2, l3],[b1, b2, b3],[r1, r2, r3],[f1, f2, f3]]
+l_face=[[l1, l2, l3],[l4, l5, l6],[l7, l8, l9]]
+l_rotation1=[l1, l2, l3, l6, l9, l8, l7, l4]
 l_rotation2=[['w','w','w'],['g','g','g'],['y','y','y'],['b','b','b']]
 f_face=[['b','b','b'],['b','b','b'],['b','b','b']]
 f_rotation1=['b','b','b','b','b','b','b','b']
@@ -137,4 +153,5 @@ def rotate(face, direction):
             turn1[4].color=turn1[2].color
             turn1[3].color=temp_b
             turn1[2].color=temp_a
+#test that function to display cube works
 print_cube()
