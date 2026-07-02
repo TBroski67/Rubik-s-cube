@@ -70,7 +70,7 @@ u_rotation1=[u1, u2, u3, u6, u9, u8, u7, u4]
 u_rotation2=[[l1, l2, l3],[b1, b2, b3],[r1, r2, r3],[f1, f2, f3]]
 l_face=[[l1, l2, l3],[l4, l5, l6],[l7, l8, l9]]
 l_rotation1=[l1, l2, l3, l6, l9, l8, l7, l4]
-l_rotation2=[['w','w','w'],['g','g','g'],['y','y','y'],['b','b','b']]
+l_rotation2=[[d1, d4, d7],[b9, b6, b3],[u1, u4, u7],[b1, b4, b7]]
 f_face=[['b','b','b'],['b','b','b'],['b','b','b']]
 f_rotation1=['b','b','b','b','b','b','b','b']
 f_rotation2=[['w','w','w'],['o','o','o'],['y','y','y'],['r','r','r']]
@@ -153,5 +153,8 @@ def rotate(face, direction):
             turn1[4].color=turn1[2].color
             turn1[3].color=temp_b
             turn1[2].color=temp_a
+    if direction==1:
+        temp1a=turn2[0,0]
+        temp1b=turn2[0,1]
 #test that function to display cube works
 print_cube()
