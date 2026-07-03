@@ -71,22 +71,21 @@ u_rotation2=[[l1, l2, l3],[b1, b2, b3],[r1, r2, r3],[f1, f2, f3]]
 l_face=[[l1, l2, l3],[l4, l5, l6],[l7, l8, l9]]
 l_rotation1=[l1, l2, l3, l6, l9, l8, l7, l4]
 l_rotation2=[[d1, d4, d7],[b9, b6, b3],[u1, u4, u7],[b1, b4, b7]]
-f_face=[['b','b','b'],['b','b','b'],['b','b','b']]
-f_rotation1=['b','b','b','b','b','b','b','b']
-f_rotation2=[['w','w','w'],['o','o','o'],['y','y','y'],['r','r','r']]
-r_face=[['r','r','r'],['r','r','r'],['r','r','r']]
-r_rotation1=['r','r','r','r','r','r','r','r']
-r_rotation2=[['w','w','w'],['b','b','b'],['y','y','y'],['g','g','g']]
-b_face=[['g','g','g'],['g','g','g'],['g','g','g']]
-b_rotation1=['g','g','g','g','g','g','g','g']
-b_rotation2=[['w','w','w'],['r','r','r'],['y','y','y'],['o','o','o']]
-d_face=[['w','w','w'],['w','w','w'],['w','w','w']]
-d_rotation1=['w','w','w','w','w','w','w','w']
-d_rotation2=[['o','o','o'],['b','b','b'],['r','r','r'],['g','g','g']]
-m_rotation=[['b','b','b'],['y','y','y'],['g','g','g'],['w','w','w']]
-e_rotation=[['o','o','o'],['g','g','g'],['r','r','r'],['b','b','b']]
-s_rotation=[['w','w','w'],['o','o','o'],['y','y','y'],['r','r','r']]
-side_list=[u_face, l_face, f_face, r_face, b_face, d_face]
+f_face=[[f1, f2, f3],[f4, f5, f6],[f7, f8, f9]]
+f_rotation1=[f1, f2, f3, f6, f9, f8, f7, f4]
+f_rotation2=[[d3, d2, d1],[l9, l6, l3],[u7, u8, u9],[r1, r4, r7]]
+r_face=[[r1, r2, r3],[r4, r5, r6],[r7, r8, r9]]
+r_rotation1=[r1, r2, r3, r6, r9, r8, r7, r4]
+r_rotation2=[[d9, d6, d3],[f9, f6, f3],[u9, u6, u3],[b1, b4, b7]]
+b_face=[[b1, b2, b3],[b4, b5, b6],[b7, b8, b9]]
+b_rotation1=[b1, b2, b3, b6, b9, b8, b7, b4]
+b_rotation2=[[d7, d8, d9],[r9, r6, r3],[u3, u2, u1],[l1, l4, l7]]
+d_face=[[d1, d2, d3],[d4, d5, d6],[d7, d8, d9]]
+d_rotation1=[d1, d2, d3, d6, d9, d8, d7, d4]
+d_rotation2=[[l7, l8, l9],[f7, f8, f9],[r7, r8, r9],[b7, b8, b9]]
+m_rotation=[[b8, b5, b2],[u8, u5, u2],[b2, b5, b8],[d8, d5, d2]]
+e_rotation=[[l6, l5, l4],[b6, b5, b4],[r6, r5, r4],[f6, f5, f4]]
+s_rotation=[[d6, d5, d4],[l8, l5, l2],[u4, u5, u6],[r2, r5, r8]]
 
 #displays the cube in an unfolded state
 def print_cube():
@@ -153,8 +152,31 @@ def rotate(face, direction):
             turn1[4].color=turn1[2].color
             turn1[3].color=temp_b
             turn1[2].color=temp_a
+    temp1a=turn2[0][0].color
+    temp1b=turn2[0][1].color
+    temp1c=turn2[0][2].color
     if direction==1:
-        temp1a=turn2[0,0]
-        temp1b=turn2[0,1]
+        turn2[0][0].color=turn2[3][0].color
+        turn2[3][0].color=turn2[2][0].color
+        turn2[2][0].color=turn2[1][0].color
+        turn2[1][0].color=temp1a
+        turn2[0][1].color=turn2[3][1].color
+        turn2[3][1].color=turn2[2][1].color
+        turn2[2][1].color=turn2[1][1].color
+        turn2[1][1].color=temp1b
+        turn2[0][2].color=turn2[3][2].color
+        turn2[3][2].color=turn2[2][2].color
+        turn2[2][2].color=turn2[1][2].color
+        turn2[1][2].color=temp1c
+    else:
+        for i in range(0,3):
+            turn2[i][0].color=turn2[i+1][0].color
+            turn2[i][1].color=turn2[i+1][1].color
+            turn2[i][2].color=turn2[i+1][2].color
+        turn2[3][0].color=temp1a
+        turn2[3][1].color=temp1b
+        turn2[3][2].color=temp1c
 #test that function to display cube works
+print_cube()
+rotate('u',1)
 print_cube()
