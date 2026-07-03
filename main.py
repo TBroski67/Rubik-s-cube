@@ -178,5 +178,6 @@ def rotate(face, direction):
         turn2[3][2].color=temp1c
 #test that function to display cube works
 print_cube()
+#do U rotation, then display the cube
 rotate('u',1)
 print_cube()
