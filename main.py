@@ -87,19 +87,6 @@ m_rotation=[[b8, b5, b2],[u8, u5, u2],[b2, b5, b8],[d8, d5, d2]]
 e_rotation=[[l6, l5, l4],[b6, b5, b4],[r6, r5, r4],[f6, f5, f4]]
 s_rotation=[[d6, d5, d4],[l8, l5, l2],[u4, u5, u6],[r2, r5, r8]]
 
-#displays the cube in an unfolded state
-def print_cube():
-    print(f"""
-      {u1.color} {u2.color} {u3.color}
-      {u4.color} {u5.color} {u6.color}
-      {u7.color} {u8.color} {u9.color}
-{l1.color} {l2.color} {l3.color} {f1.color} {f2.color} {f3.color} {r1.color} {r2.color} {r3.color} {b1.color} {b2.color} {b3.color}
-{l4.color} {l5.color} {l6.color} {f4.color} {f5.color} {f6.color} {r4.color} {r5.color} {r6.color} {b4.color} {b5.color} {b6.color}
-{l7.color} {l8.color} {l9.color} {f7.color} {f8.color} {f9.color} {r7.color} {r8.color} {r9.color} {b7.color} {b8.color} {b9.color}
-      {d1.color} {d2.color} {d3.color}
-      {d4.color} {d5.color} {d6.color}
-      {d7.color} {d8.color} {d9.color}""")
-
 #function to perform rotations on cube
 def rotate(face, direction):
     if face=='u':
@@ -156,6 +143,7 @@ def rotate(face, direction):
     temp1b=turn2[0][1].color
     temp1c=turn2[0][2].color
     if direction==1:
+        #clockwise
         turn2[0][0].color=turn2[3][0].color
         turn2[3][0].color=turn2[2][0].color
         turn2[2][0].color=turn2[1][0].color
@@ -169,6 +157,7 @@ def rotate(face, direction):
         turn2[2][2].color=turn2[1][2].color
         turn2[1][2].color=temp1c
     else:
+        #counterclockwise
         for i in range(0,3):
             turn2[i][0].color=turn2[i+1][0].color
             turn2[i][1].color=turn2[i+1][1].color
@@ -176,8 +165,3 @@ def rotate(face, direction):
         turn2[3][0].color=temp1a
         turn2[3][1].color=temp1b
         turn2[3][2].color=temp1c
-#test that function to display cube works
-print_cube()
-#do U rotation, then display the cube
-rotate('u',1)
-print_cube()
