@@ -1,4 +1,7 @@
 # Rubik-s-cube
+from display import print_cube
+import hotkeys
+
 class facelet:
     def __init__(self, color):
         self.color=color
