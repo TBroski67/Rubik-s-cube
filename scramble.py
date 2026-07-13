@@ -3,7 +3,7 @@ from random import randint
 
 #scramble function
 def scramble():
-    prev_move = '' #prevent rotationg same face consecutive times
+    prev_move = '' #prevent rotating same face consecutive times
     #letters for each move, indexes used with randint command below
     move_letters = ('u','u','u','l','l','l','f','f','f','r','r','r','b','b','b','d','d','d','m','m','m','e','e','e','s','s','s')
     moves = (rotations.u, rotations.uw, rotations.uTwo,
