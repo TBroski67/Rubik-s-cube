@@ -16,7 +16,7 @@ def scramble():
              rotations.e, rotations.ew, rotations.eTwo,
              rotations.s, rotations.sw, rotations.sTwo)
     move_count = 0
-    while move_count<25:    
+    while move_count<25:
         #generate random move
         move = randint(0,26)
         #check for repeating move on same side as last move
