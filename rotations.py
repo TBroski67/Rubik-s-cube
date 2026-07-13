@@ -27,8 +27,8 @@ def rotate(face, direction):
         turn2=cube.s_rotation
     if face not in ['m','e','s']:
         #use basic steps to simulate rotating cube by switching colors of pieces
-        if direction==1:
-            #clockwise rotation
+        if direction!=1:
+            #counterclockwise rotation
             temp_a=turn1[0].color
             temp_b=turn1[1].color
             turn1[0].color=turn1[2].color
@@ -40,7 +40,7 @@ def rotate(face, direction):
             turn1[6].color=temp_a
             turn1[7].color=temp_b
         else:
-            #counterclockwise
+            #clockwise
             temp_a=turn1[0].color
             temp_b=turn1[1].color
             turn1[0].color=turn1[6].color
