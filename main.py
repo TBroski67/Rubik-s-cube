@@ -1,5 +1,4 @@
 # Rubik-s-cube
-from display import print_cube
 import hotkeys
 
 class facelet:
@@ -90,81 +89,3 @@ m_rotation=[[b8, b5, b2],[u8, u5, u2],[b2, b5, b8],[d8, d5, d2]]
 e_rotation=[[l6, l5, l4],[b6, b5, b4],[r6, r5, r4],[f6, f5, f4]]
 s_rotation=[[d6, d5, d4],[l8, l5, l2],[u4, u5, u6],[r2, r5, r8]]
 
-#function to perform rotations on cube
-def rotate(face, direction):
-    if face=='u':
-        turn1=u_rotation1
-        turn2=u_rotation2
-    elif face=='l':
-        turn1=l_rotation1
-        turn2=l_rotation2
-    elif face=='f':
-        turn1=f_rotation1
-        turn2=f_rotation2
-    elif face=='r':
-        turn1=r_rotation1
-        turn2=r_rotation2
-    elif face=='b':
-        turn1=b_rotation1
-        turn2=b_rotation2
-    elif face=='d':
-        turn1=d_rotation1
-        turn2=d_rotation2
-    elif face=='m':
-        turn2=m_rotation
-    elif face=='e':
-        turn2=e_rotation
-    elif face=='s':
-        turn2=s_rotation
-    if face not in ['m','e','s']:
-        #use basic steps to simulate rotating cube by switching colors of pieces
-        if direction==1:
-            #clockwise rotation
-            temp_a=turn1[0].color
-            temp_b=turn1[1].color
-            turn1[0].color=turn1[2].color
-            turn1[1].color=turn1[3].color
-            turn1[2].color=turn1[4].color
-            turn1[3].color=turn1[5].color
-            turn1[4].color=turn1[6].color
-            turn1[5].color=turn1[7].color
-            turn1[6].color=temp_a
-            turn1[7].color=temp_b
-        else:
-            #counterclockwise
-            temp_a=turn1[0].color
-            temp_b=turn1[1].color
-            turn1[0].color=turn1[6].color
-            turn1[1].color=turn1[7].color
-            turn1[7].color=turn1[5].color
-            turn1[6].color=turn1[4].color
-            turn1[5].color=turn1[3].color
-            turn1[4].color=turn1[2].color
-            turn1[3].color=temp_b
-            turn1[2].color=temp_a
-    temp1a=turn2[0][0].color
-    temp1b=turn2[0][1].color
-    temp1c=turn2[0][2].color
-    if direction==1:
-        #clockwise
-        turn2[0][0].color=turn2[3][0].color
-        turn2[3][0].color=turn2[2][0].color
-        turn2[2][0].color=turn2[1][0].color
-        turn2[1][0].color=temp1a
-        turn2[0][1].color=turn2[3][1].color
-        turn2[3][1].color=turn2[2][1].color
-        turn2[2][1].color=turn2[1][1].color
-        turn2[1][1].color=temp1b
-        turn2[0][2].color=turn2[3][2].color
-        turn2[3][2].color=turn2[2][2].color
-        turn2[2][2].color=turn2[1][2].color
-        turn2[1][2].color=temp1c
-    else:
-        #counterclockwise
-        for i in range(0,3):
-            turn2[i][0].color=turn2[i+1][0].color
-            turn2[i][1].color=turn2[i+1][1].color
-            turn2[i][2].color=turn2[i+1][2].color
-        turn2[3][0].color=temp1a
-        turn2[3][1].color=temp1b
-        turn2[3][2].color=temp1c
