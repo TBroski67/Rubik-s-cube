@@ -11,5 +11,5 @@ print_cube()
 #rotations.u()
 #print_cube()
 #sleep(5) #okay to change
-#scramble()
-#print_cube()
+scramble()
+print_cube()
