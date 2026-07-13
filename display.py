@@ -1,13 +1,20 @@
-import main
+import cube
+import os
 #displays the cube in an unfolded state
 def print_cube():
+    #clear console using os module
+    if os.name=='nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+    #print individual facelets of cube
     print(f"""
-      {main.u1.color} {main.u2.color} {main.u3.color}
-      {main.u4.color} {main.u5.color} {main.u6.color}
-      {main.u7.color} {main.u8.color} {main.u9.color}
-{main.l1.color} {main.l2.color} {main.l3.color} {main.f1.color} {main.f2.color} {main.f3.color} {main.r1.color} {main.r2.color} {main.r3.color} {main.b1.color} {main.b2.color} {main.b3.color}
-{main.l4.color} {main.l5.color} {main.l6.color} {main.f4.color} {main.f5.color} {main.f6.color} {main.r4.color} {main.r5.color} {main.r6.color} {main.b4.color} {main.b5.color} {main.b6.color}
-{main.l7.color} {main.l8.color} {main.l9.color} {main.f7.color} {main.f8.color} {main.f9.color} {main.r7.color} {main.r8.color} {main.r9.color} {main.b7.color} {main.b8.color} {main.b9.color}
-      {main.d1.color} {main.d2.color} {main.d3.color}
-      {main.d4.color} {main.d5.color} {main.d6.color}
-      {main.d7.color} {main.d8.color} {main.d9.color}""")
+      {cube.u1.color} {cube.u2.color} {cube.u3.color}
+      {cube.u4.color} {cube.u5.color} {cube.u6.color}
+      {cube.u7.color} {cube.u8.color} {cube.u9.color}
+{cube.l1.color} {cube.l2.color} {cube.l3.color} {cube.f1.color} {cube.f2.color} {cube.f3.color} {cube.r1.color} {cube.r2.color} {cube.r3.color} {cube.b1.color} {cube.b2.color} {cube.b3.color}
+{cube.l4.color} {cube.l5.color} {cube.l6.color} {cube.f4.color} {cube.f5.color} {cube.f6.color} {cube.r4.color} {cube.r5.color} {cube.r6.color} {cube.b4.color} {cube.b5.color} {cube.b6.color}
+{cube.l7.color} {cube.l8.color} {cube.l9.color} {cube.f7.color} {cube.f8.color} {cube.f9.color} {cube.r7.color} {cube.r8.color} {cube.r9.color} {cube.b7.color} {cube.b8.color} {cube.b9.color}
+      {cube.d1.color} {cube.d2.color} {cube.d3.color}
+      {cube.d4.color} {cube.d5.color} {cube.d6.color}
+      {cube.d7.color} {cube.d8.color} {cube.d9.color}""")

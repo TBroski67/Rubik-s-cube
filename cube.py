@@ -1,5 +1,4 @@
 # Rubik-s-cube
-import hotkeys
 
 class facelet:
     def __init__(self, color):
@@ -88,4 +87,3 @@ d_rotation2=[[l7, l8, l9],[f7, f8, f9],[r7, r8, r9],[b7, b8, b9]]
 m_rotation=[[b8, b5, b2],[u8, u5, u2],[b2, b5, b8],[d8, d5, d2]]
 e_rotation=[[l6, l5, l4],[b6, b5, b4],[r6, r5, r4],[f6, f5, f4]]
 s_rotation=[[d6, d5, d4],[l8, l5, l2],[u4, u5, u6],[r2, r5, r8]]
-

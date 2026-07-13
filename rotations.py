@@ -1,30 +1,30 @@
-import main
+import cube
 #function to perform rotations on cube
 def rotate(face, direction):
     if face=='u':
-        turn1=main.u_rotation1
-        turn2=main.u_rotation2
+        turn1=cube.u_rotation1
+        turn2=cube.u_rotation2
     elif face=='l':
-        turn1=main.l_rotation1
-        turn2=main.l_rotation2
+        turn1=cube.l_rotation1
+        turn2=cube.l_rotation2
     elif face=='f':
-        turn1=main.f_rotation1
-        turn2=main.f_rotation2
+        turn1=cube.f_rotation1
+        turn2=cube.f_rotation2
     elif face=='r':
-        turn1=main.r_rotation1
-        turn2=main.r_rotation2
+        turn1=cube.r_rotation1
+        turn2=cube.r_rotation2
     elif face=='b':
-        turn1=main.b_rotation1
-        turn2=main.b_rotation2
+        turn1=cube.b_rotation1
+        turn2=cube.b_rotation2
     elif face=='d':
-        turn1=main.d_rotation1
-        turn2=main.d_rotation2
+        turn1=cube.d_rotation1
+        turn2=cube.d_rotation2
     elif face=='m':
-        turn2=main.m_rotation
+        turn2=cube.m_rotation
     elif face=='e':
-        turn2=main.e_rotation
+        turn2=cube.e_rotation
     elif face=='s':
-        turn2=main.s_rotation
+        turn2=cube.s_rotation
     if face not in ['m','e','s']:
         #use basic steps to simulate rotating cube by switching colors of pieces
         if direction==1:
