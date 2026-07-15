@@ -2,11 +2,6 @@ import cube
 import os
 #displays the cube in an unfolded state
 def print_cube():
-    #clear console using os module
-    if os.name=='nt':
-        os.system('cls')
-    else:
-        os.system('clear')
     #print individual facelets of cube
     print(f"""
       {cube.u1.color} {cube.u2.color} {cube.u3.color}
@@ -18,3 +13,9 @@ def print_cube():
       {cube.d1.color} {cube.d2.color} {cube.d3.color}
       {cube.d4.color} {cube.d5.color} {cube.d6.color}
       {cube.d7.color} {cube.d8.color} {cube.d9.color}""")
+def clear():
+    #clear console using os module
+    if os.name=='nt':
+        os.system('cls')
+    else:
+        os.system('clear')
