@@ -1,0 +1,32 @@
+#Warning: AI-generated code
+name: Pull Request Automation
+
+# 1. Trigger the workflow automatically on PR creation or updates
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main  # Target branch of the PR
+
+jobs:
+  run-tests:
+    runs-on: windows-2025 # The operating system to run your code on
+
+    steps:
+      # 2. Fetch your repository code onto the runner machine
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # 3. Set up your language environment (Example: Node.js)
+      - name: Set up Python
+        uses: actions/setup-node@v4
+        with:
+          node-node-version: '20'
+
+      # 4. Install your application dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 5. Execute your custom code or automated scripts
+      - name: Run automated code tests
+        run: npm test
