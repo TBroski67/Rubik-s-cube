@@ -6,72 +6,73 @@ while True:
     print_cube()
     actions = input("Input moves using cube notation, or type 'O' for options: ").lower().strip().split()
     clear()
-    for action in actions:
-        if action=="o":
-            print("""Options:
+        for action in actions:
+        match action:
+            case "o":
+                print("""Options:
 The moves in cube notations are: u, l, f, r, b, d for clockwise turns on the corresponding face:
 u for up, l for left, f for front, r for right, b for back, and d for down. The slice turn moves are m, e, and s,
 for middle, equator, and standing. To input a move, type the letter (u, l, f, r, b, d, m, e, s), and if desired,
 also add a ' to denote a counterclockwise turn, or 2 for a half turn (180 degrees). To perform multiple moves,
 type in separate move commands separated by spaces. To generate a random scramble, type 'scramble'.""")
-            break
-        elif action=="scramble":
-            scramble()
-            break
-        elif action=="u":
-            rotations.u()
-        elif action=="u'":
-            rotations.uw()
-        elif action=="u2":
-            rotations.uTwo()
-        elif action=="l":
-            rotations.l()
-        elif action=="l'":
-            rotations.lw()
-        elif action=="l2":
-            rotations.lTwo()
-        elif action=="f":
-            rotations.f()
-        elif action=="f'":
-            rotations.fw()
-        elif action=="f2":
-            rotations.fTwo()
-        elif action=="r":
-            rotations.r()
-        elif action=="r'":
-            rotations.rw()
-        elif action=="r2":
-            rotations.rTwo()
-        elif action=="b":
-            rotations.b()
-        elif action=="b'":
-            rotations.bw()
-        elif action=="b2":
-            rotations.bTwo()
-        elif action=="d":
-            rotations.d()
-        elif action=="d'":
-            rotations.dw()
-        elif action=="d2":
-            rotations.dTwo()
-        elif action=="m":
-            rotations.m()
-        elif action=="m'":
-            rotations.mw()
-        elif action=="m2":
-            rotations.mTwo()
-        elif action=="e":
-            rotations.e()
-        elif action=="e'":
-            rotations.ew()
-        elif action=="e2":
-            rotations.eTwo()
-        elif action=="s":
-            rotations.s()
-        elif action=="s'":
-            rotations.sw()
-        elif action=="s2":
-            rotations.sTwo()
-        else:
-            print("Sorry, input not recognized.")
-            break
+                break
+            case "scramble":
+                scramble()
+                break
+            case "u":
+                rotations.u()
+            case "u'":
+                rotations.uw()
+            case "u2":
+                rotations.uTwo()
+            case "l":
+                rotations.l()
+            case "l'":
+                rotations.lw()
+            case "l2":
+                rotations.lTwo()
+            case "f":
+                rotations.f()
+            case "f'":
+                rotations.fw()
+            case "f2":
+                rotations.fTwo()
+            case "r":
+                rotations.r()
+            case "r'":
+                rotations.rw()
+            case "r2":
+                rotations.rTwo()
+            case "b":
+                rotations.b()
+            case "b'":
+                rotations.bw()
+            case "b2":
+                rotations.bTwo()
+            case "d":
+                rotations.d()
+            case "d'":
+                rotations.dw()
+            case "d2":
+                rotations.dTwo()
+            case "m":
+                rotations.m()
+            case "m'":
+                rotations.mw()
+            case "m2":
+                rotations.mTwo()
+            case "e":
+                rotations.e()
+            case "e'":
+                rotations.ew()
+            case "e2":
+                rotations.eTwo()
+            case "s":
+                rotations.s()
+            case "s'":
+                rotations.sw()
+            case "s2":
+                rotations.sTwo()
+            case _:
+                print("Sorry, input not recognized.")
+                break
