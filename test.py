@@ -15,8 +15,16 @@ You may comment out any sections of code to focus on specific test cases.
 """
 from display import print_cube
 import rotations
-from time import sleep
 from scramble import scramble
+
+#function to verify if test cases pass
+def verify_test(cube_state, expected_state):
+    if expected_state==cube_state:
+        print("Test passed. Cube displays correctly.")
+    else:
+        print("Test failed. Correct cube state should be:")
+        print(expected_state)
+
 #test that function to display cube works
 test_state = print_cube()
 expected_state = """      y y y
@@ -28,12 +36,7 @@ o o o b b b r r r g g g
       w w w
       w w w
       w w w"""
-if test_state==expected_state:
-    print("Test passed. Cube displays correctly.")
-else:
-    print("Test failed. Correct cube state should be:")
-    print(expected_state)
-sleep(5) #show unscrambled cube for a few seconds, may change this for testing
+verify_test(test_state, expected_state)
 #do U and F2 rotation, then display the cube
 rotations.u()
 rotations.fTwo()
@@ -48,11 +51,6 @@ o o g r r r b r r g g g
       y y y
       w w w
       w w w"""
-if test_state==expected_state:
-    print("Test passed. Cube displays correctly.")
-else:
-    print("Test failed. Correct cube state should be:")
-    print(expected_state)
-sleep(5) #okay to change sleep time
+verify_test(test_state, expected_state)
 scramble()
 print_cube()
