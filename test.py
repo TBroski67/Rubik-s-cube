@@ -21,13 +21,16 @@ from scramble import scramble
 def verify_test(cube_state, expected_state):
     if expected_state==cube_state:
         print("Test passed. Cube displays correctly.")
+        return True
     else:
         print("Test failed. Correct cube state should be:")
         print(expected_state)
-
-#test that function to display cube works
-test_state = print_cube()
-expected_state = """      y y y
+        return False
+#test that function to display cube works, stored as function
+#to prevent interfering with algorithm_test.py operations.
+def test():
+    test_state = print_cube()
+    expected_state = """      y y y
       y y y
       y y y
 o o o b b b r r r g g g
@@ -36,13 +39,13 @@ o o o b b b r r r g g g
       w w w
       w w w
       w w w"""
-verify_test(test_state, expected_state)
-#do U and F2 rotation, then display the cube
-rotations.u()
-rotations.fTwo()
-rotations.u()
-test_state = print_cube()
-expected_state = """      w y y
+    verify_test(test_state, expected_state)
+    #do U and F2 rotation, then display the cube
+    rotations.u()
+    rotations.fTwo()
+    rotations.u()
+    test_state = print_cube()
+    expected_state = """      w y y
       w y y
       w y y
 b b b o g g o o o b b r
@@ -51,6 +54,6 @@ o o g r r r b r r g g g
       y y y
       w w w
       w w w"""
-verify_test(test_state, expected_state)
-scramble()
-print_cube()
+    verify_test(test_state, expected_state)
+    scramble()
+    print_cube()
