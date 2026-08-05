@@ -4,7 +4,7 @@ import rotations
 def solve_centers():
     #move white center to bottom of cube
     if cube.u5.color=='w':
-        rotations.xTwo
+        rotations.xTwo()
     elif cube.l5.color=='w':
         rotations.zw()
     elif cube.f5.color=='w':
@@ -36,9 +36,8 @@ def find_edge(color1, color2):
                  (cube.d8, cube.b8)]
     for edge in edge_list:
         #test if both colors of edge are in an edge's location
-        if edge[0].color==color1 or edge[1].color==color1:
-            if edge[0].color==color2 or edge[1].color==color2:
-                return (edge[0], edge[1])
+        if (edge[0].color==color1 or edge[1].color==color1) and (edge[0].color==color2 or edge[1].color==color2):
+            return (edge[0], edge[1])
 #function to turn edge into correct position
 def solve_edge(other_color):
     #rotate cube to help simplify cases for each edge
