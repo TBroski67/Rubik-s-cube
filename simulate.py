@@ -6,7 +6,7 @@ while True:
     print_cube()
     actions = input("Input moves using cube notation, or type 'O' for options: ").lower().strip().split()
     clear()
-        for action in actions:
+    for action in actions:
         match action:
             case "o":
                 print("""Options:
