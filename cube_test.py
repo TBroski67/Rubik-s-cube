@@ -44,5 +44,3 @@ o o g r r r b r r g g g
       w w w
       w w w"""
 verify_test(test_state, expected_state)
-scramble()
-print_cube()
