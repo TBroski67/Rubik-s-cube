@@ -1,15 +1,11 @@
-from display import print_cube
-import rotations
-from time import sleep
-from scramble import scramble
-#test that function to display cube works
-print_cube()
-sleep(5) #show unscrambled cube for a few seconds, may change this for testing
-#do U and F2 rotation, then display the cube
-rotations.u()
-rotations.fTwo()
-rotations.u()
-print_cube()
-sleep(5) #okay to change sleep time
-scramble()
-print_cube()
+#function to verify if test cases pass
+def verify_test(cube_state, expected_state):
+    if expected_state==cube_state:
+        print("Test passed. Cube displays correctly.")
+        return True
+    else:
+        print("Test failed. Correct cube state should be:")
+        print(expected_state)
+        print("Current state is:")
+        print(cube_state)
+        return False
